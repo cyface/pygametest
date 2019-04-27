@@ -7,15 +7,10 @@ pygame.mixer.init()
 
 soundObj = pygame.mixer.Sound('laser.wav')
 soundObj.play()
-time.sleep(1)  # wait and let the sound play for X second
-soundObj.stop()
 
 button = gpiozero.Button(23)
 while True:
     if button.is_pressed:
         print("Pressed")
         soundObj.play()
-        time.sleep(1)  # wait and let the sound play for X second
-    else:
-        print("Released")
-    time.sleep(1)
+        time.sleep(.25)  # wait and let the sound play for X second
